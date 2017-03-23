@@ -5,8 +5,14 @@ import random
 from bs4 import BeautifulSoup
 #browser = webdriver.Firefox()
 import requests
+from pymongo import MongoClient
 
-base_url = 'https://millercenter.org/'
+# Define the MongoDB database and table
+db_cilent = MongoClient()
+db = db_cilent['presidential']
+table = db['meta']
+
+base_url = 'https://millercenter.org'
 
 #'''
 #Scroll down the website so all the content can be shown
@@ -42,7 +48,14 @@ for each_speech in all_links_name:
     speech_list.append(speech)
     date_list.append(date)
 
-with open('speech.dat','w') as f:
-    f.write(str(speech_list))
-    f.write(str(date_list))
-    f.write(str(links_list))
+for i in range(971,len(links_list)):
+    browser.get(links_list[i])
+    trans1 = BeautifulSoup(browser.page_source,'lxml').find('div',{'class':'transcript-inner'})
+
+    if trans1:
+        text = trans1.text.replace('Transcript','').replace('\n','')
+    else:
+        trans2 = BeautifulSoup(browser.page_source,'lxml').find('div',{'class':'view-transcript'})
+        text = trans2.text.replace('Transcript','').replace('\n','')
+
+    table.insert_one({'date':date_list[i],'speech_title':speech_list[i],'link':links_list[i],'content':text})
