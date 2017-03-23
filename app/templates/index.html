@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>NLP Analysis of Congressional records and Presidential speeches</title>
+  <meta name="description" content="NLP">
+  <meta name="author" content="Galvanize DSI">
+
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='jquery.js') }}">
+    </script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='app.js') }}">
+    </script>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+</head>
+
+<body>
+
+  <header>
+    <div class='container'>
+      <div id='branding'>
+        <h1>NLP of Congressional Records and Presidential Speeches</h1>
+        <nav>
+          <ul>
+            <li><a href='index.html'>Home</a></li>
+            <li><a href='about.html'>About</a></li>
+            <li><a href='services.html'>Services</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class='container'>
+      <h1>Relevant words search</h1>
+      <p>Enter the keywords you want to search in the congressional records or presidentail speeches, press
+        search button and it will return the most relevant words with respect to your search. </p>
+    </div>
+  </section>
+
+  <section><h1>Please input the keywords you want to search inside the congressional records</h1>
+    <form>
+      <input type = 'text' placeholder="Enter words you want to search...">
+      <button type='submit'>Search
+      </button>
+      </input>
+    </form>
+  </section>
+  <section><h1>Please input the keywords you want to search inside the presidential speeches</h1>
+    <form>
+      <input type = 'text' placeholder="Enter words you want to search...">
+      <button type='submit'>Search
+      </button>
+      </input>
+    </form>
+  </section>
+
+</body>
+</html>
