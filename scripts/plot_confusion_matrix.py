@@ -1,7 +1,7 @@
 import itertools
 import matplotlib.pyplot as plt
 %matplotlib inline
-def plot_confusion_matrix(cm, classes,
+def plot_confusion_matrix(cm, classes,       #cm is confusion matrix(the square matrix), classes: the names of labels
                           normalize=False,
                           title='Confusion matrix',
                           cmap=plt.cm.Blues):
