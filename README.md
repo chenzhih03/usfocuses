@@ -13,11 +13,11 @@ The Congressional Record that is published daily when the congress is in session
 ###Data preparation
 TF-IDF, Bag of words, and parts of Speeches tagging are some techniques for text precessing.
 
-###Modeling TBD
+###Modeling 
 Multinomial classification models such as multinomialNB, Logistic Regression and Random Forest are applied.
 
-###Evaluation TBD
+###Evaluation 
 One way to identify the accuracy of the model would be to check the trends of topics over time since the trend of a certain topic is known in the history.
 For multinomial classification problem, plotting the confusion matrix is a good method to find out how well the model performs on classifying different labels.
 
-####Deployment TBD
+####Deployment 
